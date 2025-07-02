@@ -3,12 +3,16 @@ const colors = require('colors')
 const cors = require('cors')
 const morgan = require('morgan')
 const dotenv = require('dotenv')
+const connectDb = require('./config/db')
+
 
 //dot en configuration
-dotenv.config()
+dotenv.config();
 
+//DB connection
+connectDb();
 //create rest objects to use express objects
-const app = express()
+const app = express();
 
 //middlewares
 app.use(cors());
